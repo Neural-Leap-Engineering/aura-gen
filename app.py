@@ -16,7 +16,7 @@ import json
 import requests
 import boto3
 from io import BytesIO
-from PIL import Image
+from PIL import Imagef
 import json
 import gradio as gr
 import imgkit
@@ -25,17 +25,16 @@ import uuid
 import os
 
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-
-
 
 api_key = os.environ.get("api_key")
 
-openai_api_key = "Add_Open_Api_Key"
+openai_api_key = os.environ.get("Openai_API")
 
 model_name = "gpt-3.5-turbo"
 
-rapid_api_key = "Add_rapid_api_key"
+rapid_api_key = os.environ.get("rapid_api_key")
 
 def generate_title_and_subtitles(prompt, model_name, keyword):
     chat_model = ChatOpenAI(temperature=0, openai_api_key=openai_api_key, model_name=model_name)
@@ -141,10 +140,7 @@ def generate_images(structure):
     return dict_as_string
 
 def generate_html(dict_as_string):
-
     
-
-    openai.api_key = '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'
     response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[
