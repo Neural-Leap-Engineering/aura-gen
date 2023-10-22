@@ -16,13 +16,14 @@ import json
 import requests
 import boto3
 from io import BytesIO
-from PIL import Imagef
+from PIL import Image
 import json
 import gradio as gr
 import imgkit
 import base64
 import uuid
 import os
+
 
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
 
@@ -206,9 +207,3 @@ interface = gr.Interface(
 
 if __name__ == "__main__":
     interface.launch()
-
-# Example usage
-#keyword = "toyota prius"
-#prompt = keyword
-#article_data = generate_title_and_subtitles(prompt, model_name, keyword)
-#print(article_data)
