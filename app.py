@@ -31,6 +31,8 @@ AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
 api_key = os.environ.get("api_key")
 
+openai.api_key = os.environ.get("Openai_API")
+
 openai_api_key = os.environ.get("Openai_API")
 
 model_name = "gpt-3.5-turbo"
@@ -145,7 +147,7 @@ def generate_html(dict_as_string):
     response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[
-        {"role": "system", "content": dict_as_string+", using this multiple dictionary data create html article structure including title subtitle and also the paragraph with image component. use image size width 300px height 300px and center aligned. use all components center align and responsive"}
+        {"role": "system", "content": dict_as_string+", using this multiple dictionary data create html article structure including title subtitle and also the paragraph with image component. use image size width 300px height 300px and images margin must be auto. use all components center align and responsive"}
     ],
     temperature=0.8,
     max_tokens=1500
