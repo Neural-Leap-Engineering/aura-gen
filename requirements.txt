@@ -1,0 +1,7 @@
+openai
+gradio
+requests
+Pillow
+boto3
+imgkit
+langchain 
