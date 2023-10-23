@@ -147,7 +147,7 @@ def generate_html(dict_as_string):
     response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[
-        {"role": "system", "content": dict_as_string+", using this multiple dictionary data create html article structure including title subtitle and also the paragraph with image component. use image size width 300px height 300px and images margin must be auto. use all components center align and responsive"}
+        {"role": "system", "content": dict_as_string+", using this multiple dictionary data create html article structure including order of title, title-image, subtitle, subtitle-image and also the paragraph. use image size width 300px height 300px, image coordination must be inside center aligned container and image margins should be auto. use all components center align and responsive."}
     ],
     temperature=0.8,
     max_tokens=1500
